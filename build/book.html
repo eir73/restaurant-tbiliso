@@ -43,10 +43,12 @@
             dateFormat: 'dd-mm-yy',
             firstDay: 1,
             dayNamesShort: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
+            dayNames: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
             gotoCurrent: true
           });
           $( "#delivery-date" ).datepicker({
             dateFormat: 'dd-mm-yy',
+            minDate: Date.now(),
             firstDay: 1,
             dayNamesShort: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
             gotoCurrent: true
@@ -125,7 +127,7 @@
             <input type="text" class="book__input" id="name" placeholder="Ім'я">
             <input type="tel" class="book__input" placeholder="Телефон" id="b-phone">
             <div class="book__input-wr">
-              <input type="text" class="book__input" id="book-date" placeholder="Дата">
+              <input type="text" autocomplete="off" class="book__input" id="book-date" placeholder="Дата">
               <label for="book-date" style="font-family: FontAwesome">&#xF073;</label>
             </div>
               <button type="submit" class="book__button">
@@ -152,7 +154,7 @@
               <input type="text" autocomplete="off" class="book__input" id="name" placeholder="Ім'я">
               <input type="tel" class="book__input" placeholder="Телефон" id="d-phone">
               <div class="book__input-wr">
-                <input type="text" class="book__input" id="delivery-date" placeholder="Дата">
+                <input type="text" autocomplete="off" class="book__input" id="delivery-date" placeholder="Дата">
                 <label for="book-date" style="font-family: FontAwesome">&#xF073;</label>
               </div>
               <input type="text" autocomplete="off" class="book__input" id="address" placeholder="Адреса">
