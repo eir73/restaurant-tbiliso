@@ -100,4 +100,27 @@ deliveryLinks.forEach(link => {
     }, 1000)
   })
 })
+
+
+function initMap() {
+  const tbilisoPosition = { lat: 48.74148810491459, lng: 37.58627156950326 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: tbilisoPosition,
+    zoom: 16,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#38414e" }],
+      },
+    ]
+  })
+  const marker = new google.maps.Marker({
+    position: tbilisoPosition,
+    map: map,
+  });
+}
 //# sourceMappingURL=main.js.map
