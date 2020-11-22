@@ -101,9 +101,15 @@ bookForm.onsubmit = e => {
   
   fetch('https://tbiliso-bot.ey.r.appspot.com/api/reserve', {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(data),
   }).then(data => {
     console.log(data)
+    if (!data.ok) {
+      alert('К сожалению, заказы через сайт временно не работают. Воспользуйтесь нашим телефоном.')
+    }
     return data.json()
   }).then(data => console.log(data))
 
@@ -133,8 +139,14 @@ deliveryForm.onsubmit = e => {
   fetch('https://tbiliso-bot.ey.r.appspot.com/api/delivery', {
     method: 'POST',
     body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    },
   }).then(data => {
     console.log(data)
+    if (!data.ok) {
+      alert('К сожалению, заказы через сайт временно не работают. Воспользуйтесь нашим телефоном.')
+    }
     return data.json()
   }).then(data => console.log(data))
 
