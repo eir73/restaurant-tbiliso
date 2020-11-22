@@ -37,6 +37,7 @@
     line-height: 48px;
     letter-spacing: 0.02em;
     text-align: center;
+    text-decoration: none !important;
 
     @media screen and (max-width: 992px) {
       text-align: center;
@@ -65,6 +66,18 @@
       margin-bottom: 20px;
       font-size: 24px;
       line-height: 29px;
+    }
+  }
+
+  &__link-img {
+    transition: opacity ease 0.3s;
+
+    svg, path {
+      cursor: pointer;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

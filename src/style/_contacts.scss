@@ -71,8 +71,13 @@
   }
 
   &__map {
+    height: 256px;
     margin: 0 !important;
     margin-bottom: -1px !important;
+
+    #map {
+      height: 100%;
+    }
 
     img {
       width: 100%;

@@ -1,18 +1,51 @@
-.book {
+.book, .delivery {
   position: fixed;
-  top: 123px;
+  z-index: 5;
+  top: -100vh;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 123px);
+  height: calc(100vh);
   padding: 40px 0;
   background-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(0);
+  transition: transform ease 1s;
+
+  .book__phone {
+    margin-top: 22px;
+    background-color: #fff;
+    margin-right: 0;
+    font-size: 22px;
+    color: #000 !important;
+    font-family: Cormorant, serif;
+    text-align: center;
+
+    strong {
+      font-size: 30px;
+      line-height: 45px;
+    }
+  }
+
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &.open {
+    display: flex;
+    transform: translateY(100vh);
+  }
+
+  &.no-transition {
+    transition: none !important;
+  }
 
   @media screen and (max-width: 992px) {
-    top: 82px;
-    height: calc(100vh - 82px);
-    padding-top: 0;
+    padding: 0;
   }
 
   @media screen and (max-width: 767px) {
@@ -20,14 +53,11 @@
   }
 
   @media screen and (max-width: 575px) {
-    position: relative;
-    top: 0;
-    height: auto;
+    height: 100vh;
   }
 
   &__header {
     height: 100vh;
-    min-height: 568px;
     background-image: url(../img/home-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,7 +109,7 @@
   &__form-wr {
     display: flex;
     width: 831px;
-    height: 558px;
+    min-height: 100vh;
     max-height: 100%;
 
     @media screen and (max-width: 992px) {
@@ -98,6 +128,7 @@
   &__img-wr {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
     overflow: hidden;
 
@@ -116,6 +147,7 @@
   }
 
   &__form {
+    position: relative;
     width: 50%;
     padding-left: 60px;
     padding-right: 70px;
@@ -138,7 +170,8 @@
 
   &__input {
     width: 100%;
-    margin-bottom: 31px;
+    height: 42px;
+    margin-bottom: 20px;
     border: none;
     border-bottom: 2px solid #000;
     outline: none;
@@ -150,11 +183,29 @@
     line-height: 34px;
     letter-spacing: 0.03em;
     text-indent: 2px;
-    color: #000;
+    color: #000;  
+
+    &#book-date, &#delivery-date {
+      padding-left: 34px;
+    }
+
+    &-wr {
+      position: relative;
+
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #A49E9E;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;  
+      }
+    }
   }
 
   &__button {
-    margin-top: 33px;
     padding: 0;
     border: none;
     outline: none;

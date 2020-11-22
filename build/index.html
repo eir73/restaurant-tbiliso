@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-  <title>Tbiliso</title>
+  <title>Tбилиso</title>
   <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="194x194" href="./img/favicon-194x194.png">
@@ -38,7 +38,7 @@
 		    $( function() {
 		      $( "#book-date" ).datepicker({
 		        dateFormat: 'dd-mm-yy',
-		        firstDay: 1,
+		        firstDay: 0,
 		        dayNamesShort: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
 		        dayNames: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
 		        gotoCurrent: true
@@ -46,7 +46,7 @@
 		      $( "#delivery-date" ).datepicker({
 		        dateFormat: 'dd-mm-yy',
 		        minDate: Date.now(),
-		        firstDay: 1,
+		        firstDay: 0,
 		        dayNamesShort: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд" ],
 		        gotoCurrent: true
 		      });
@@ -56,12 +56,7 @@
 		  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 			<nav class="header__nav nav">
 				<ul class="nav__locale">
-					<li class="nav__item">
-						<a href="#" class="nav__link">UA</a>
-					</li>
-					<li class="nav__item">
-						<a href="#" class="nav__link">EN</a>
-					</li>
+					
 				</ul>
 				<div class="nav__logo">
 					<a href="./" class="nav__logo-link">
@@ -123,13 +118,16 @@
 		        </div>
 		        <input type="text" class="book__input" id="name" placeholder="Ім'я">
 		        <input type="tel" class="book__input" placeholder="Телефон" id="b-phone">
+		        <input type="text" class="book__input" id="time" placeholder="Орієнтовний час">
 		        <div class="book__input-wr">
 		          <input type="text" autocomplete="off" class="book__input" id="book-date" placeholder="Дата">
 		          <label for="book-date" style="font-family: FontAwesome">&#xF073;</label>
 		        </div>
+		        
 		          <button type="submit" class="book__button">
 		            <span class="home__link home__link-black f-18">Забронювати столик</span>
 		          </button>
+		          <p class="book__phone">Або дзвоніть за телефоном:  <br> <strong>(066) 480-00-25</strong></p>
 		      </form>
 		    </div>
 		  </div>
@@ -150,14 +148,12 @@
 		        </div>
 		          <input type="text" autocomplete="off" class="book__input" id="name" placeholder="Ім'я">
 		          <input type="tel" class="book__input" placeholder="Телефон" id="d-phone">
-		          <div class="book__input-wr">
-		            <input type="text" autocomplete="off" class="book__input" id="delivery-date" placeholder="Дата">
-		            <label for="book-date" style="font-family: FontAwesome">&#xF073;</label>
-		          </div>
+		          <input type="text" class="book__input" id="time" placeholder="Орієнтовний час">
 		          <input type="text" autocomplete="off" class="book__input" id="address" placeholder="Адреса">
 		          <button type="submit" class="book__button">
 		            <span class="home__link home__link-red f-18">Замовити доставку</span>
 		          </button>
+		          <p class="book__phone">Або дзвоніть за телефоном: <br> <strong>(066) 480-00-25</strong></p>
 		      </form>
 		    </div>
 		  </div>
@@ -182,14 +178,16 @@
 				</h3>
 				<div class="home__col">
 					<p class="home__info">
-						Головні цінності ALASKA — використовувати світові гастрономічні тренди і створювати святкову атмосферу з живою
-						музикою.
+						Чому саме Грузія? Тому що саме у Грузії справжня гостинність, дружня атмосфера та люб’язні люди.
 					</p>
 					<p class="home__info">
-						ALASKA — це команда професіоналів, яка вкладає всі сили в свою справу.
+						Тбіліsо – це лише національна грузинська кухня з колоритними відносинами від кращих шеф-поварів.
 					</p>
 					<p class="home__info">
-						ALASKA — це турбота про гостей і їх дозвілля, це незабутні враження і безцінна довіра.
+						Тбіліsо - це затишна атмосфера, приємні професіональні працівники, різновид грузинських напоїв.
+          </p>
+          <p class="home__info">
+						Кожній людині потрібно місце, де можна відпочити не тільки фізично, але й морально. Грузинське вино та шашлик - це лише привід. Справжнє свято – це коли збирається уся сім’я разом за великим столом, а все інше залишається за дверима.
 					</p>
 				</div>
 				<div class="home__row home__about-btn">
@@ -214,26 +212,26 @@
 				</h3>
 				<div class="home__col">
 					<div class="home__menu-item home__row">
-						<a href="#" class="home__menu-img">
+						<a target="_blank" href="https://drive.google.com/file/d/1Qt3zxqhoZZznpus-4F-tYWOUQ8qCRnUt/view?usp=sharing" class="home__menu-img">
 							<img src="./img/fork.svg" alt="">
 						</a>
-						<a href="#" class="home__menu-item-text">
+						<a target="_blank" href="https://drive.google.com/file/d/1Qt3zxqhoZZznpus-4F-tYWOUQ8qCRnUt/view?usp=sharing" class="home__menu-item-text">
 							Меню страв
 						</a>
 					</div>
 					<div class="home__menu-item home__row">
-						<a href="#" class="home__menu-img">
+						<a target="_blank" href="https://drive.google.com/file/d/1yp5dvxB8EwGDf6HhEDX5Sb_d-91xYnx_/view?usp=sharing" class="home__menu-img">
 							<img src="./img/knife.svg" alt="">
 						</a>
-						<a href="#" class="home__menu-item-text">
+						<a target="_blank" href="https://drive.google.com/file/d/1yp5dvxB8EwGDf6HhEDX5Sb_d-91xYnx_/view?usp=sharing" class="home__menu-item-text">
 							Меню страв на мангалі
 						</a>
 					</div>
 					<div class="home__menu-item home__row">
-						<a href="#" class="home__menu-img">
+						<a target="_blank" href="https://drive.google.com/file/d/1RXzgNcnsA6xrIwOVCCQzBd09z7_4c-Pk/view?usp=sharing" class="home__menu-img">
 							<img src="./img/glass.svg" alt="">
 						</a>
-						<a href="#" class="home__menu-item-text">
+						<a target="_blank" href="https://drive.google.com/file/d/1RXzgNcnsA6xrIwOVCCQzBd09z7_4c-Pk/view?usp=sharing" class="home__menu-item-text">
 							Меню напоїв
 						</a>
 					</div>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tbiliso</title>
+  <title>Tбилиso</title>
   <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="194x194" href="./img/favicon-194x194.png">
@@ -37,10 +37,15 @@
     <div class="contacts__footer footer-white">
       //= partials/_footer.html
     </div>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoFfdefHA18pFcHtQoVnokt5WDsFR6ndw&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
     <div class="contacts__map">
-      <a href="#" class="contacts__link">
-        <img src="./img/contacts-map.jpg" alt="">
-      </a>
+      <div id="map">
+
+      </div>
     </div>
     <div class="contacts__rights">
       <p class="contacts__text">

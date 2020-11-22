@@ -49,6 +49,8 @@
   &__img-wr {
     max-width: 470px;
     width: 100%;
+    display: flex;
+    align-items: center;
 
     @media screen and (max-width: 992px) {
       margin-left: auto;

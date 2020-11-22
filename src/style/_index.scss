@@ -371,6 +371,7 @@
   }
 
   &__menu-img {
+    display: block;
     margin-right: 75px;
     width: 125px;
     height: 125px;
@@ -387,6 +388,7 @@
 
     img {
       width: 100%;
+      cursor: pointer;
     }
   }
 
@@ -468,4 +470,9 @@
     justify-content: center;
   }
 
+  &__link-img {
+    svg, path {
+      cursor: pointer;
+    }
+  }
 }

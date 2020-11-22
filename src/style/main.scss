@@ -66,6 +66,8 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 .center {
@@ -96,6 +98,21 @@ body {
   margin-right: 17px;
 }
 
+.ui-state-default.ui-state-active {
+  background-color: $red !important;
+}
+
+.ui-state-default.ui-state-highlight {
+  background-color: $red !important;
+  opacity: 0.4;
+  color: #fff !important;
+}
+
+
+.ui-state-default {
+  background-color: #fff !important;
+  border: none !important;
+}
 
 main:not(.contacts__main) {
   width: 1170px !important;
