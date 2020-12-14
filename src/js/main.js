@@ -37,27 +37,6 @@ if (window.innerWidth <= 992) {
 
 const bookForm = document.getElementById('book-form')
 const deliveryForm = document.getElementById('delivery-form')
-
-bookForm.onsubmit = e => {
-  e.preventDefault()
-  const name = bookForm.querySelector('#name').value
-  const phone = bookForm.querySelector('#b-phone').value
-  const date = bookForm.querySelector('#book-date').value
-  const data = { name, phone, date }
-  console.log(data)
-}
-
-deliveryForm.onsubmit = e => {
-  e.preventDefault()
-  const name = deliveryForm.querySelector('#name').value
-  const phone = deliveryForm.querySelector('#d-phone').value
-  const date = deliveryForm.querySelector('#delivery-date').value
-  const address = deliveryForm.querySelector('#address').value
-  const data = { name, phone, date, address }
-  console.log(data)
-}
-  
-// pop-up
 const bookLinks = [...document.querySelectorAll('a[href="./book.html"]')]
 const deliveryLinks = [...document.querySelectorAll('a[href="./delivery.html"]')]
 const bookBlock = document.querySelector('.book__form-wr')
@@ -101,6 +80,80 @@ deliveryLinks.forEach(link => {
   })
 })
 
+bookForm.onsubmit = e => {
+  e.preventDefault()
+  const name = bookForm.querySelector('#name')
+  Bphone = bookForm.querySelector('#b-phone')
+  const date = bookForm.querySelector('#book-date')
+  const time = bookForm.querySelector('#time')
+
+  const data = {
+    name: name.value,
+    phone: Bphone.value,
+    date: date.value,
+    time: time.value,
+  }
+
+  time.value = ''
+  name.value = ''
+  Bphone.value = ''
+  date.value = ''
+  
+  fetch('https://tbiliso-bot.ey.r.appspot.com/api/reserve', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data),
+  }).then(data => {
+    console.log(data)
+    if (!data.ok) {
+      alert('К сожалению, заказы через сайт временно не работают. Воспользуйтесь нашим телефоном.')
+    }
+    return data.json()
+  }).then(data => console.log(data))
+
+  bookWrap.classList.remove('open')
+  bookWrap.classList.remove('no-transition')
+}
+
+deliveryForm.onsubmit = e => {
+  e.preventDefault()
+  const name = deliveryForm.querySelector('#name')
+  Dphone = deliveryForm.querySelector('#d-phone')
+  const address = deliveryForm.querySelector('#address')
+  const time = deliveryForm.querySelector('#time')
+
+  const data = {
+    name: name.value,
+    phone: Dphone.value,
+    address: address.value,
+    time: time.value,
+  }
+
+  time.value = ''
+  name.value = ''
+  Dphone.value = ''
+  address.value = ''
+
+  fetch('https://tbiliso-bot.ey.r.appspot.com/api/delivery', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }).then(data => {
+    console.log(data)
+    if (!data.ok) {
+      alert('К сожалению, заказы через сайт временно не работают. Воспользуйтесь нашим телефоном.')
+    }
+    return data.json()
+  }).then(data => console.log(data))
+
+  console.log(data)
+  deliveryWrap.classList.remove('no-transition')
+  deliveryWrap.classList.remove('open')
+}
 
 function initMap() {
   const tbilisoPosition = { lat: 48.74148810491459, lng: 37.58627156950326 };

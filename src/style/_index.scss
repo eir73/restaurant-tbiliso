@@ -346,6 +346,8 @@
   &__img-wr {
     width: 470px;
     min-width: 470px;
+    display: flex;
+    align-items: center;
 
     @media screen and (max-width: 1199px) {
       width: 400px;

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy": "npm run build && git add build && git commit -m \"fix\" && git subtree push --prefix build origin site"
   },
   "keywords": [],
   "author": "",
