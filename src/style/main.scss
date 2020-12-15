@@ -144,3 +144,11 @@ a:hover, button:hover {
 a:active, button:active {
   opacity: 0.7 !important;
 } 
+
+a.contacts__heading {
+  margin-top: -50px;  
+  margin-bottom: 100px;
+  &:after {
+    content: none;
+  }
+}
